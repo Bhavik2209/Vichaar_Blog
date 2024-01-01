@@ -43,6 +43,18 @@ app.post("/compose",(req,res)=>{
     res.redirect("/");
 });
 
+app.get("/posts/:postName",(req,res)=>{
+    const requestedtitle = req.params.postName;
+    posts.forEach((post)=>{
+        const  storedTitle = post.title;
+
+        if(storedTitle==requestedtitle){
+            res.redirect();
+        }
+    });
+
+}); 
+
 app.listen(port,()=>{
     console.log(`server is running on port${port}`);
 })
