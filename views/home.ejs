@@ -1,6 +1,10 @@
 <%- include("partials/header"); -%>
+<link rel="stylesheet" href="/public/css/styles1.css">
+<form class="compose" action="/" method="post" id="header-form">
+    <label for="button">Do you want to publish something?</label>
+    <button  id="btn" name="button" type="submit" class="btn btn-primary">Publish</button>
+</form>
 <h1>Home</h1>
-<p><%= para%></p>
 <%posts.forEach(function(post){%>
     <h1><%= post.title %></h1>
     <p><%= post.content.substring(0,100)+"..." %>
